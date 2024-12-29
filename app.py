@@ -12,10 +12,10 @@ from sklearn.tree import DecisionTreeRegressor
 
 
 # pipe = pickle.load(open('pipe.pkl','rb'))
-df = pd.read_csv('D:\Career\Data Science\Projects_DA_DS\Watches\Watch_Market\cleaned_watched.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/OmkarAK/watches_2/refs/heads/main/cleaned_watched.csv')
 
-watch_rec1 = pd.read_csv('D:\Career\Data Science\Projects_DA_DS\Watches\Watch_Market\watch_rec1.csv')
-watch_rec2 = pd.read_csv('D:\Career\Data Science\Projects_DA_DS\Watches\Watch_Market\watch_rec2.csv')
+watch_rec1 = pd.read_csv('https://raw.githubusercontent.com/OmkarAK/watches_2/refs/heads/main/watch_rec1.csv')
+watch_rec2 = pd.read_csv('https://raw.githubusercontent.com/OmkarAK/watches_2/refs/heads/main/watch_rec2.csv')
 
 from sklearn.preprocessing import Normalizer, OneHotEncoder
 from sklearn.compose import ColumnTransformer
@@ -115,7 +115,7 @@ def recommend_watches2(example_watch2, a2, preprocessor2, top_n2=3):
 
 if options == 'External':
     
-        # Price
+    # Price
     Price = st.number_input('Price',min_value=df['Price'].min(),max_value=df['Price'].max())
 
     # Case material
@@ -187,7 +187,7 @@ elif options == 'Price_Prediction1':
     # Load the trained model 
     pred_options = st.sidebar.selectbox('Pred_Options',['Level 1','Level 2','Level 3'])
 
-    internal_pr = pd.read_csv('D:\Career\Data Science\Projects_DA_DS\Watches\Watch_Market\internal_pr.csv').drop(columns=['Unnamed: 0'])
+    internal_pr = pd.read_csv('https://raw.githubusercontent.com/OmkarAK/watches_2/refs/heads/main/internal_pr.csv').drop(columns=['Unnamed: 0'])
 
     if pred_options == 'Level 1':
         X1 = internal_pr.drop(columns=['Price'])
